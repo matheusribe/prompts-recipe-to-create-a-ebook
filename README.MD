@@ -1,6 +1,6 @@
 # ⚔️ O Código do Bruxo: Caçando Insights Entre Gráficos e Monstros
 
-![Capa do eBook](output/Capa%20para%20Ebook.png)
+![Capa do eBook](output/Capa%20para%20o%20Ebook.png)
 
 > eBook sobre análise de dados com Power BI, inspirado em The Witcher
 
