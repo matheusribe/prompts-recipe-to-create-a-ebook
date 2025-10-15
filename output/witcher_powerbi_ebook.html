@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Código do Bruxo - Power BI eBook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: #ffffff;
+            page-break-after: always;
+            position: relative;
+            padding: 50px 60px;
+            box-sizing: border-box;
+        }
+        
+        .page-header {
+            position: absolute;
+            top: 20px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b00 0%, transparent 100%);
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            font-size: 12px;
+            color: #999;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            margin-top: 10px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #ff6b00, #d64000);
+            border-radius: 2px;
+        }
+        
+        .subsection-title {
+            font-size: 20px;
+            color: #ff6b00;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .text {
+            font-size: 14px;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background: #fff8f0;
+            border-left: 4px solid #ff6b00;
+            padding: 18px 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .highlight-box strong {
+            color: #ff6b00;
+            font-weight: 600;
+        }
+        
+        .example-box {
+            background: #f0f9ff;
+            border-left: 4px solid #0096d6;
+            padding: 18px 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .example-label {
+            font-weight: 600;
+            color: #0096d6;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 13px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .feature-card {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .feature-name {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        ul {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #4a4a4a;
+            font-size: 14px;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #666;
+            padding: 15px 0;
+            margin: 20px 0;
+            font-size: 13px;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        @media print {
+            body {
+                background: #ffffff;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: INTRODUÇÃO -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Introdução: A Trilha dos Dados</h1>
+        
+        <div class="text">
+            Em um mundo onde decisões baseadas em dados definem o sucesso de organizações, o Power BI emerge como uma ferramenta essencial para profissionais que buscam transformar informações brutas em conhecimento estratégico.
+        </div>
+        
+        <div class="text">
+            Assim como um bruxo domina sinais, poções e espadas para enfrentar desafios, o analista de dados precisa dominar as ferramentas do Power BI para extrair insights valiosos de conjuntos complexos de informações.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Power BI</strong> é uma plataforma de business intelligence da Microsoft que permite conectar, transformar, visualizar e compartilhar dados de forma integrada e intuitiva.
+        </div>
+
+        <h2 class="subsection-title">O Que Você Vai Aprender</h2>
+        
+        <div class="text">
+            Este guia apresenta os principais recursos do Power BI com foco em análise de dados. Você compreenderá como cada ferramenta contribui para o processo analítico e verá exemplos práticos de aplicação.
+        </div>
+
+        <ul>
+            <li><strong>Power Query:</strong> Preparação e transformação de dados</li>
+            <li><strong>Modelagem:</strong> Criação de relacionamentos e cálculos</li>
+            <li><strong>DAX:</strong> Linguagem para análises avançadas</li>
+            <li><strong>Visualizações:</strong> Comunicação efetiva de insights</li>
+            <li><strong>Power BI Service:</strong> Compartilhamento e colaboração</li>
+        </ul>
+
+        <div class="page-number">01</div>
+    </div>
+
+    <!-- PÁGINA 2: POWER QUERY -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Power Query: Preparando o Terreno</h1>
+        
+        <div class="text">
+            O Power Query é o motor ETL (Extract, Transform, Load) do Power BI. É aqui que você coleta dados de múltiplas fontes, limpa inconsistências e estrutura informações para análise. Esta etapa consome cerca de 80% do tempo em projetos de dados.
+        </div>
+
+        <h2 class="subsection-title">Conexão com Fontes de Dados</h2>
+        
+        <div class="text">
+            O Power Query se conecta a dezenas de fontes diferentes: bancos de dados SQL, arquivos Excel, APIs web, Google Analytics, Salesforce, SharePoint e muitas outras.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Uma empresa precisa analisar vendas que estão em três locais: planilha Excel (vendas mensais), banco SQL Server (estoque) e API do ERP (pedidos em tempo real). O Power Query permite conectar todas essas fontes simultaneamente.
+        </div>
+
+        <h2 class="subsection-title">Transformação de Dados</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🧹</span>
+                <div class="feature-name">Limpeza</div>
+                <div class="feature-desc">Remove linhas duplicadas, valores nulos e erros de digitação automaticamente</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔄</span>
+                <div class="feature-name">Formatação</div>
+                <div class="feature-desc">Ajusta tipos de dados, formatos de datas e padronização de textos</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔗</span>
+                <div class="feature-name">Mesclagem</div>
+                <div class="feature-desc">Combina tabelas diferentes usando chaves comuns (similar ao JOIN em SQL)</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">➕</span>
+                <div class="feature-name">Acréscimo</div>
+                <div class="feature-desc">Empilha tabelas com estruturas similares (similar ao UNION)</div>
+            </div>
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Você recebe uma planilha onde a coluna "Estado" tem valores como "sp", "SP", "São Paulo" e "Sao Paulo". No Power Query, use "Substituir Valores" e "Formatar > Maiúsculas" para padronizar tudo como "SP" em poucos cliques.
+        </div>
+
+        <div class="page-number">02</div>
+    </div>
+
+    <!-- PÁGINA 3: POWER QUERY CONTINUAÇÃO -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Power Query: Recursos Avançados</h1>
+
+        <h2 class="subsection-title">Divisão e Extração de Colunas</h2>
+        
+        <div class="text">
+            Frequentemente, dados vêm em formatos não ideais. O Power Query permite dividir colunas por delimitadores, extrair caracteres específicos e criar novas colunas baseadas em condições.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Uma coluna "Nome Completo" contém "Silva, João". Use "Dividir Coluna > Por Delimitador" escolhendo a vírgula, depois inverta a ordem e terá "João Silva" em colunas separadas.
+        </div>
+
+        <h2 class="subsection-title">Colunas Condicionais e Personalizadas</h2>
+        
+        <div class="text">
+            Crie novas colunas baseadas em lógica condicional sem escrever código. É útil para categorização e segmentação de dados.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Para classificar vendas, crie uma coluna condicional: SE Valor {'>'} 10000 ENTÃO "Alto", SE Valor {'>'} 5000 ENTÃO "Médio", SENÃO "Baixo". O Power Query gera automaticamente o código M nos bastidores.
+        </div>
+
+        <h2 class="subsection-title">Atualização Automática</h2>
+        
+        <div class="text">
+            Todas as transformações ficam registradas como "etapas aplicadas". Quando os dados de origem mudam, basta clicar em "Atualizar" para que todas as transformações sejam reaplicadas automaticamente.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Importante:</strong> O Power Query trabalha com "query folding", otimizando operações ao enviar transformações diretamente para a fonte de dados quando possível, tornando o processo mais eficiente.
+        </div>
+
+        <div class="quote">
+            "Preparação adequada elimina surpresas desagradáveis na análise final."
+        </div>
+
+        <div class="page-number">03</div>
+    </div>
+
+    <!-- PÁGINA 4: MODELAGEM DE DADOS -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Modelagem: Construindo Relacionamentos</h1>
+        
+        <div class="text">
+            A modelagem de dados é onde você define como as tabelas se relacionam. Um modelo bem estruturado é fundamental para análises precisas e performance otimizada.
+        </div>
+
+        <h2 class="subsection-title">Modelo Estrela (Star Schema)</h2>
+        
+        <div class="text">
+            O modelo mais recomendado para Power BI é o Star Schema, composto por tabelas fato (métricas) no centro e tabelas dimensão (contextos) ao redor.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Uma análise de vendas teria: <strong>Fato_Vendas</strong> (centro) conectada a <strong>Dim_Produto</strong>, <strong>Dim_Cliente</strong>, <strong>Dim_Tempo</strong> e <strong>Dim_Vendedor</strong>. Cada relacionamento usa chaves específicas como ID_Produto ou ID_Cliente.
+        </div>
+
+        <h2 class="subsection-title">Tipos de Relacionamento</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">1️⃣</span>
+                <div class="feature-name">Um para Muitos (1:N)</div>
+                <div class="feature-desc">O mais comum. Um cliente pode ter muitas vendas</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">1️⃣</span>
+                <div class="feature-name">Um para Um (1:1)</div>
+                <div class="feature-desc">Menos comum. Usado para tabelas complementares</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔄</span>
+                <div class="feature-name">Muitos para Muitos (N:N)</div>
+                <div class="feature-desc">Evite quando possível. Pode causar ambiguidade</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">↔️</span>
+                <div class="feature-name">Direção de Filtro</div>
+                <div class="feature-desc">Define como filtros se propagam entre tabelas</div>
+            </div>
+        </div>
+
+        <h2 class="subsection-title">Cardinalidade e Filtros Cruzados</h2>
+        
+        <div class="text">
+            A direção do filtro determina como seleções em visuais afetam outras tabelas. Em relacionamentos 1:N, geralmente o filtro vai do "um" para o "muitos" (direção única).
+        </div>
+
+        <div class="page-number">04</div>
+    </div>
+
+    <!-- PÁGINA 5: TABELAS CALCULADAS E COLUNAS -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Colunas e Tabelas Calculadas</h1>
+
+        <h2 class="subsection-title">Colunas Calculadas</h2>
+        
+        <div class="text">
+            Colunas calculadas são criadas usando DAX e são computadas linha por linha durante o refresh. São armazenadas no modelo e ocupam memória.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Para calcular margem de lucro: <code>Margem = [Receita] - [Custo]</code>. Esta coluna será calculada para cada linha da tabela e estará disponível para segmentação e filtros.
+        </div>
+
+        <h2 class="subsection-title">Tabelas Calculadas</h2>
+        
+        <div class="text">
+            Tabelas calculadas são geradas a partir de dados existentes no modelo. Úteis para criar tabelas de calendário, categorização ou consolidação.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Criar tabela de calendário: <code>Calendario = CALENDAR(DATE(2020,1,1), DATE(2025,12,31))</code>. Depois adicione colunas como Ano, Mês, Trimestre para análises temporais.
+        </div>
+
+        <h2 class="subsection-title">Quando Usar Cada Recurso</h2>
+        
+        <ul>
+            <li><strong>Colunas calculadas:</strong> Quando precisa segmentar ou filtrar por valores calculados</li>
+            <li><strong>Medidas (próxima seção):</strong> Para agregações dinâmicas que mudam conforme contexto</li>
+            <li><strong>Tabelas calculadas:</strong> Para estruturas auxiliares como calendário ou agrupamentos</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Dica de Performance:</strong> Prefira fazer cálculos no Power Query quando possível. Colunas calculadas consomem memória, enquanto transformações no Power Query são mais eficientes.
+        </div>
+
+        <div class="page-number">05</div>
+    </div>
+
+    <!-- PÁGINA 6: DAX -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">DAX: A Linguagem de Análise</h1>
+        
+        <div class="text">
+            DAX (Data Analysis Expressions) é a linguagem de fórmulas do Power BI. Com ela você cria medidas dinâmicas, KPIs complexos e análises avançadas que respondem ao contexto dos filtros aplicados.
+        </div>
+
+        <h2 class="subsection-title">Medidas vs Colunas Calculadas</h2>
+        
+        <div class="text">
+            Medidas são calculadas dinamicamente durante a visualização, não ocupam espaço no modelo e respondem aos filtros aplicados. São essenciais para análises agregadas.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            <code>Total Vendas = SUM(Vendas[Valor])</code> calcula a soma no contexto atual. Se filtrar por "Janeiro" ou "Produto X", o valor se ajusta automaticamente.
+        </div>
+
+        <h2 class="subsection-title">Funções DAX Essenciais</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <div class="feature-name">SUM, AVERAGE, COUNT</div>
+                <div class="feature-desc">Agregações básicas para cálculos simples</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <div class="feature-name">CALCULATE</div>
+                <div class="feature-desc">Modifica o contexto de filtro de uma medida</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔗</span>
+                <div class="feature-name">RELATED, RELATEDTABLE</div>
+                <div class="feature-desc">Navega entre tabelas relacionadas</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">⏱️</span>
+                <div class="feature-name">Time Intelligence</div>
+                <div class="feature-desc">TOTALYTD, SAMEPERIODLASTYEAR, etc.</div>
+            </div>
+        </div>
+
+        <h2 class="subsection-title">CALCULATE: A Função Mais Poderosa</h2>
+        
+        <div class="text">
+            CALCULATE permite modificar o contexto de filtro, possibilitando cálculos como vendas do ano passado, participação no total, e comparações complexas.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            <code>Vendas 2024 = CALCULATE([Total Vendas], Ano[Ano] = 2024)</code> calcula vendas apenas de 2024, independente dos filtros aplicados no relatório.
+        </div>
+
+        <div class="page-number">06</div>
+    </div>
+
+    <!-- PÁGINA 7: DAX AVANÇADO -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">DAX: Análises Avançadas</h1>
+
+        <h2 class="subsection-title">Inteligência de Tempo</h2>
+        
+        <div class="text">
+            As funções de Time Intelligence permitem análises comparativas entre períodos. Requerem uma tabela de calendário contínua e marcada como tabela de data.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLOS PRÁTICOS:</span>
+            <strong>Vendas Acumuladas no Ano:</strong> <code>TOTALYTD([Total Vendas], Calendario[Data])</code>
+            <br><br>
+            <strong>Mesmo Período Ano Anterior:</strong> <code>SAMEPERIODLASTYEAR(Calendario[Data])</code>
+            <br><br>
+            <strong>Crescimento Ano a Ano:</strong> <code>VAR VendasAnoAnterior = CALCULATE([Total Vendas], SAMEPERIODLASTYEAR(Calendario[Data])) RETURN DIVIDE([Total Vendas] - VendasAnoAnterior, VendasAnoAnterior)</code>
+        </div>
+
+        <h2 class="subsection-title">Contexto de Filtro vs Contexto de Linha</h2>
+        
+        <div class="text">
+            Entender os dois tipos de contexto é crucial para dominar DAX. O contexto de filtro vem de visuais e slicers. O contexto de linha ocorre em colunas calculadas e funções iteradoras.
+        </div>
+
+        <h2 class="subsection-title">Funções de Filtro</h2>
+        
+        <ul>
+            <li><strong>FILTER:</strong> Retorna uma tabela filtrada para uso dentro de CALCULATE</li>
+            <li><strong>ALL:</strong> Remove filtros de colunas ou tabelas inteiras</li>
+            <li><strong>ALLEXCEPT:</strong> Remove todos os filtros exceto os especificados</li>
+            <li><strong>VALUES:</strong> Retorna valores únicos de uma coluna no contexto atual</li>
+        </ul>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            <code>% do Total = DIVIDE([Total Vendas], CALCULATE([Total Vendas], ALL(Produto[Categoria])))</code> calcula quanto cada categoria representa do total geral, removendo o filtro de categoria.
+        </div>
+
+        <div class="page-number">07</div>
+    </div>
+
+    <!-- PÁGINA 8: VISUALIZAÇÕES -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Visualizações: Comunicando Insights</h1>
+        
+        <div class="text">
+            Visualizações transformam dados em informação compreensível. Escolher o gráfico certo é fundamental para comunicar insights de forma clara e efetiva.
+        </div>
+
+        <h2 class="subsection-title">Principais Tipos de Visuais</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <div class="feature-name">Gráficos de Barras/Colunas</div>
+                <div class="feature-desc">Comparações entre categorias. Use barras para muitas categorias</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📈</span>
+                <div class="feature-name">Gráficos de Linha</div>
+                <div class="feature-desc">Tendências ao longo do tempo. Ideal para séries temporais</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🥧</span>
+                <div class="feature-name">Gráficos de Pizza/Rosca</div>
+                <div class="feature-desc">Proporções de um todo. Use para poucas categorias (máximo 5)</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🗺️</span>
+                <div class="feature-name">Mapas</div>
+                <div class="feature-desc">Distribuição geográfica. Ótimo para análise regional</div>
+            </div>
+        </div>
+
+        <h2 class="subsection-title">Visuais para Análises Avançadas</h2>
+        
+        <div class="text">
+            <strong>Matriz:</strong> Similar ao Excel, permite drill-down hierárquico. Ideal para análises dimensionais com subtotais.
+        </div>
+
+        <div class="text">
+            <strong>Gráfico de Dispersão:</strong> Mostra correlação entre duas métricas. Use tamanho e cor para adicionar dimensões extras.
+        </div>
+
+        <div class="text">
+            <strong>Cartão e Cartão de Várias Linhas:</strong> Destaca KPIs principais. Use formatação condicional para alertas visuais.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Para análise de vendas por produto, use um gráfico de barras mostrando os top 10 produtos. Adicione drill-down para ver subcategorias. Use cores condicionais: verde para produtos acima da meta, vermelho para abaixo.
+        </div>
+
+        <div class="page-number">08</div>
+    </div>
+
+    <!-- PÁGINA 9: INTERATIVIDADE -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Interatividade e Filtros</h1>
+
+        <h2 class="subsection-title">Segmentação de Dados</h2>
+        
+        <div class="text">
+            Slicers (segmentadores) permitem que usuários filtrem dados interativamente. Podem ser configurados para seleção única, múltipla, ou por intervalo.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Crie um slicer de período usando a tabela de calendário. Configure para mostrar ano, trimestre e mês. Quando o usuário seleciona "2024 > Q1 > Janeiro", todos os visuais da página filtram automaticamente.
+        </div>
+
+        <h2 class="subsection-title">Filtros Cruzados</h2>
+        
+        <div class="text">
+            Por padrão, ao clicar em um visual, outros visuais na mesma página são filtrados automaticamente. Você pode controlar esse comportamento nas interações de visual.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Dica:</strong> Use "Editar interações" para definir se um visual deve filtrar, realçar ou não afetar outros visuais. Útil quando tem visuais independentes na mesma página.
+        </div>
+
+        <h2 class="subsection-title">Drill Through</h2>
+        
+        <div class="text">
+            Permite criar páginas de detalhe. O usuário clica com botão direito em um ponto de dados e "detalha" para uma página específica com informações aprofundadas.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Página principal mostra vendas por categoria. Crie uma página drill-through de "Detalhes do Produto". Quando o usuário clica em uma categoria, é levado para uma página mostrando todos os produtos daquela categoria com métricas detalhadas.
+        </div>
+
+        <h2 class="subsection-title">Tooltips Personalizados</h2>
+        
+        <div class="text">
+            Crie páginas especiais de tooltip para mostrar informações extras ao passar o mouse sobre um visual, sem poluir o dashboard principal.
+        </div>
+
+        <div class="page-number">09</div>
+    </div>
+
+    <!-- PÁGINA 10: POWER BI SERVICE -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Power BI Service: Compartilhamento</h1>
+        
+        <div class="text">
+            O Power BI Service é a plataforma em nuvem onde você publica relatórios, cria dashboards, configura atualizações automáticas e compartilha com stakeholders.
+        </div>
+
+        <h2 class="subsection-title">Workspaces (Espaços de Trabalho)</h2>
+        
+        <div class="text">
+            Workspaces organizam conteúdo relacionado. Você pode criar workspaces por departamento, projeto ou área de negócio, controlando permissões de acesso.
+        </div>
+
+        <h2 class="subsection-title">Relatórios vs Dashboards</h2>
+        
+        <div class="text">
+            <strong>Relatórios:</strong> Páginas detalhadas com múltiplos visuais interativos. Criados no Power BI Desktop e publicados no Service.
+        </div>
+        
+        <div class="text">
+            <strong>Dashboards:</strong> Uma única página com visuais fixados de diferentes relatórios. Visão consolidada de KPIs críticos.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Crie um dashboard executivo fixando: cartão com receita total de um relatório de vendas, gráfico de tendência do relatório financeiro, mapa do relatório regional e tabela de top produtos. Tudo em uma única tela.
+        </div>
+
+        <h2 class="subsection-title">Atualização de Dados</h2>
+        
+        <div class="text">
+            Configure atualizações automáticas para manter dados sempre atuais. Disponível para fontes como SQL Server, SharePoint, OneDrive e outras fontes em nuvem.
+        </div>
+
+        <div class="page-number">10</div>
+    </div>
+
+    <!-- PÁGINA 11: COMPARTILHAMENTO E SEGURANÇA -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Compartilhamento e Segurança</h1>
+
+        <h2 class="subsection-title">Métodos de Compartilhamento</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">👥</span>
+                <div class="feature-name">Apps</div>
+                <div class="feature-desc">Pacote pronto de relatórios e dashboards para distribuição em massa</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔗</span>
+                <div class="feature-name">Links Diretos</div>
+                <div class="feature-desc">Compartilhe URLs específicas com permissões controladas</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">📧</span>
+                <div class="feature-name">Assinaturas</div>
+                <div class="feature-desc">Envie snapshots automáticos por e-mail em horários definidos</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🌐</span>
+                <div class="feature-name">Publicar na Web</div>
+                <div class="feature-desc">Torne públicos (apenas para dados não confidenciais)</div>
+            </div>
+        </div>
+
+        <h2 class="subsection-title">Row-Level Security (RLS)</h2>
+        
+        <div class="text">
+            RLS permite que diferentes usuários vejam apenas os dados relevantes para eles, mesmo no mesmo relatório. Essencial para segurança corporativa.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Gerentes regionais devem ver apenas dados de sua região. Crie uma função no Power BI Desktop com filtro DAX: <code>[Região] = USERPRINCIPALNAME()</code>. Mapeie cada gerente para sua região. Automaticamente cada um vê apenas seus dados.
+        </div>
+
+        <h2 class="subsection-title">Gateway de Dados</h2>
+        
+        <div class="text">
+            Para fontes on-premises (bancos locais, arquivos de rede), instale o Gateway de Dados para criar uma ponte segura entre seus dados internos e o Power BI Service na nuvem.
+        </div>
+
+        <div class="page-number">11</div>
+    </div>
+
+    <!-- PÁGINA 12: BOAS PRÁTICAS -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Boas Práticas de Análise</h1>
+
+        <h2 class="subsection-title">Performance e Otimização</h2>
+        
+        <ul>
+            <li><strong>Reduza colunas desnecessárias:</strong> No Power Query, remova colunas que não serão usadas na análise</li>
+            <li><strong>Use tipos de dados corretos:</strong> Inteiros consomem menos memória que decimais, datas menos que texto</li>
+            <li><strong>Evite relacionamentos bidirecionais:</strong> Podem causar ambiguidade e lentidão</li>
+            <li><strong>Prefira medidas a colunas calculadas:</strong> Medidas são calculadas sob demanda e não ocupam memória</li>
+            <li><strong>Agregue antes de importar:</strong> Se possível, faça agregações no banco de origem</li>
+        </ul>
+
+        <h2 class="subsection-title">Design de Dashboards</h2>
+        
+        <div class="text">
+            <strong>Regra do 5-segundo:</strong> Usuários devem entender o insight principal em 5 segundos. Evite poluição visual.
+        </div>
+
+        <div class="text">
+            <strong>Hierarquia visual:</strong> Use tamanho, cor e posição para guiar o olhar. KPIs principais no topo esquerdo (padrão de leitura).
+        </div>
+
+        <div class="text">
+            <strong>Consistência:</strong> Mantenha paleta de cores, fontes e estilo consistentes. Facilita interpretação.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Dashboard de vendas: Topo = cartões com KPIs (Receita, Margem, Volume). Centro = gráfico de tendência temporal. Lateral = filtros. Base = tabela detalhada. Cores: verde para positivo, vermelho para alertas.
+        </div>
+
+        <h2 class="subsection-title">Documentação</h2>
+        
+        <div class="text">
+            Use a área "Descrição" de medidas e colunas para documentar lógica de cálculo. Facilita manutenção e compartilhamento com equipe.
+        </div>
+
+        <div class="page-number">12</div>
+    </div>
+
+    <!-- PÁGINA 13: RECURSOS ADICIONAIS -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Recursos Adicionais do Power BI</h1>
+
+        <h2 class="subsection-title">Parâmetros "E Se" (What-If)</h2>
+        
+        <div class="text">
+            Crie cenários simulados permitindo que usuários ajustem valores e vejam impactos em tempo real. Útil para análises de sensibilidade e projeções.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Crie um parâmetro "Taxa de Crescimento" de 0% a 50%. Usuários ajustam um slider e veem projeção de receita futura recalculada instantaneamente: <code>Projeção = [Receita Atual] * (1 + [Taxa de Crescimento])</code>
+        </div>
+
+        <h2 class="subsection-title">Power BI Embedded</h2>
+        
+        <div class="text">
+            Incorpore relatórios Power BI dentro de aplicações web, portais ou sistemas internos. Ideal para white-label ou integração com plataformas existentes.
+        </div>
+
+        <h2 class="subsection-title">Dataflows</h2>
+        
+        <div class="text">
+            Reutilize transformações de Power Query entre múltiplos relatórios. Crie uma camada de dados limpos e prontos que alimenta vários projetos, promovendo governança.
+        </div>
+
+        <h2 class="subsection-title">Power BI Mobile</h2>
+        
+        <div class="text">
+            Aplicativo para iOS e Android permite visualizar relatórios otimizados para dispositivos móveis. Configure layouts específicos para celular no Power BI Desktop.
+        </div>
+
+        <h2 class="subsection-title">Q&A (Perguntas e Respostas)</h2>
+        
+        <div class="text">
+            Usuários fazem perguntas em linguagem natural como "mostre vendas por região" e o Power BI gera visuais automaticamente. Requer modelo bem estruturado com sinônimos configurados.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Dica Avançada:</strong> Configure sinônimos no modelo de dados. Por exemplo, associe "receita", "faturamento" e "vendas" à mesma medida para melhorar Q&A.
+        </div>
+
+        <div class="page-number">13</div>
+    </div>
+
+    <!-- PÁGINA 14: INTEGRAÇÕES -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Integrações e Ecossistema</h1>
+
+        <h2 class="subsection-title">Microsoft 365</h2>
+        
+        <div class="text">
+            Integração nativa com Excel (Analisar no Excel), Teams (guia de relatórios), SharePoint (embed) e PowerPoint (exportação dinâmica). Perfeito para ambientes corporativos Microsoft.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Adicione um relatório Power BI como guia no Microsoft Teams. Equipe discute insights em reuniões com dados atualizados em tempo real, sem sair da plataforma de comunicação.
+        </div>
+
+        <h2 class="subsection-title">Azure Synapse e Data Lake</h2>
+        
+        <div class="text">
+            Para volumes massivos de dados, integre com Azure Synapse Analytics ou Data Lake Storage. Power BI consulta diretamente sem importar tudo, usando DirectQuery ou modo misto.
+        </div>
+
+        <h2 class="subsection-title">Python e R</h2>
+        
+        <div class="text">
+            Execute scripts Python ou R dentro do Power BI para análises estatísticas avançadas, machine learning ou visualizações personalizadas não disponíveis nativamente.
+        </div>
+
+        <div class="example-box">
+            <span class="example-label">EXEMPLO PRÁTICO:</span>
+            Use Python com scikit-learn para criar modelo de previsão de churn. Integre no Power BI para mostrar probabilidade de cada cliente cancelar, permitindo ações preventivas.
+        </div>
+
+        <h2 class="subsection-title">Visuais Personalizados</h2>
+        
+        <div class="text">
+            Marketplace AppSource oferece centenas de visuais criados pela comunidade: gráficos de Gantt, wordclouds, calendários, sunbursts e muito mais. Você também pode desenvolver seus próprios usando JavaScript.
+        </div>
+
+        <h2 class="subsection-title">API REST</h2>
+        
+        <div class="text">
+            Automatize operações via API: publicação de relatórios, atualização de datasets, gerenciamento de usuários. Essencial para integrações e automações em escala enterprise.
+        </div>
+
+        <div class="page-number">14</div>
+    </div>
+
+    <!-- PÁGINA 15: CASOS DE USO -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Casos de Uso por Área</h1>
+
+        <h2 class="subsection-title">Vendas e Comercial</h2>
+        
+        <ul>
+            <li>Dashboard de performance de vendedores com ranking e metas</li>
+            <li>Análise de pipeline de vendas por estágio do funil</li>
+            <li>Previsão de receita baseada em histórico e sazonalidade</li>
+            <li>Análise de churn e retenção de clientes</li>
+        </ul>
+
+        <h2 class="subsection-title">Marketing</h2>
+        
+        <ul>
+            <li>ROI de campanhas por canal (Google Ads, Facebook, email)</li>
+            <li>Análise de comportamento do cliente e jornada de compra</li>
+            <li>Segmentação de audiência para ações personalizadas</li>
+            <li>Análise de engajamento em redes sociais</li>
+        </ul>
+
+        <h2 class="subsection-title">Financeiro</h2>
+        
+        <ul>
+            <li>Demonstrativos financeiros (DRE, Balanço, Fluxo de Caixa)</li>
+            <li>Análise de indicadores: ROI, EBITDA, margem líquida</li>
+            <li>Projeções e cenários orçamentários</li>
+            <li>Controle de contas a pagar e receber</li>
+        </ul>
+
+        <h2 class="subsection-title">Operações e Logística</h2>
+        
+        <ul>
+            <li>Monitoramento de estoque e rotatividade</li>
+            <li>Análise de tempo de entrega e SLA</li>
+            <li>Otimização de rotas e custos de frete</li>
+            <li>Indicadores de qualidade e produtividade</li>
+        </ul>
+
+        <h2 class="subsection-title">Recursos Humanos</h2>
+        
+        <ul>
+            <li>Análise de headcount e turnover</li>
+            <li>Métricas de recrutamento (tempo de contratação, custo por contratação)</li>
+            <li>Performance e avaliação de colaboradores</li>
+            <li>Análise de absenteísmo e horas extras</li>
+        </ul>
+
+        <div class="page-number">15</div>
+    </div>
+
+    <!-- PÁGINA 16: PRÓXIMOS PASSOS -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Sua Jornada Como Bruxo de Dados</h1>
+
+        <h2 class="subsection-title">Caminho de Aprendizado</h2>
+        
+        <div class="text">
+            <strong>1. Fundamentos (Semanas 1-2):</strong> Familiarize-se com a interface, conecte fontes simples (Excel), crie visuais básicos e entenda relacionamentos entre tabelas.
+        </div>
+
+        <div class="text">
+            <strong>2. Transformação (Semanas 3-4):</strong> Domine Power Query para limpeza e preparação de dados. Pratique com datasets reais, mesclando e modelando informações.
+        </div>
+
+        <div class="text">
+            <strong>3. Cálculos (Semanas 5-6):</strong> Aprenda DAX progressivamente. Comece com medidas simples (SUM, AVERAGE) e evolua para CALCULATE e Time Intelligence.
+        </div>
+
+        <div class="text">
+            <strong>4. Design (Semana 7):</strong> Estude princípios de visualização de dados. Crie dashboards limpos, intuitivos e focados em insights, não apenas em dados.
+        </div>
+
+        <div class="text">
+            <strong>5. Compartilhamento (Semana 8):</strong> Publique no Power BI Service, configure atualizações automáticas, implemente segurança e compartilhe com stakeholders.
+        </div>
+
+        <h2 class="subsection-title">Recursos para Continuar</h2>
+        
+        <ul>
+            <li><strong>Microsoft Learn:</strong> Cursos gratuitos oficiais com certificações</li>
+            <li><strong>SQLBI:</strong> Referência mundial em DAX e modelagem</li>
+            <li><strong>Comunidade Power BI:</strong> Fóruns com milhares de especialistas</li>
+            <li><strong>Datasets públicos:</strong> Pratique com dados reais (Kaggle, dados.gov.br)</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Certificação Microsoft:</strong> PL-300 (Power BI Data Analyst Associate) valida seu conhecimento e diferencia no mercado. Recomendado após 6 meses de prática.
+        </div>
+
+        <div class="quote">
+            "Dados bem analisados são como sinais de bruxo bem executados: transformam situações complexas em vantagens estratégicas."
+        </div>
+
+        <div class="page-number">16</div>
+    </div>
+
+    <!-- PÁGINA 17: CONCLUSÃO -->
+    <div class="page">
+        <div class="page-header"></div>
+        
+        <h1 class="section-title">Conclusão: O Arsenal Completo</h1>
+
+        <div class="text">
+            Você agora possui o conhecimento dos principais recursos do Power BI e como cada um contribui para análise de dados efetiva. Como um bruxo domina diferentes ferramentas para cada tipo de ameaça, você conhece as capacidades de cada componente da plataforma.
+        </div>
+
+        <h2 class="subsection-title">Recapitulando o Arsenal</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🔧</span>
+                <div class="feature-name">Power Query</div>
+                <div class="feature-desc">Sua forja: onde dados brutos tornam-se informação estruturada</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🔗</span>
+                <div class="feature-name">Modelagem</div>
+                <div class="feature-desc">Suas poções: relacionamentos que dão poder às análises</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">⚔️</span>
+                <div class="feature-name">DAX</div>
+                <div class="feature-desc">Sua espada: cálculos precisos que revelam verdades ocultas</div>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <div class="feature-name">Visualizações</div>
+                <div class="feature-desc">Seus sinais: comunicação clara de insights complexos</div>
+            </div>
+        </div>
+
+        <div class="text">
+            O domínio do Power BI não acontece da noite para o dia. Cada projeto é uma nova caçada, cada desafio uma oportunidade de aprimorar suas habilidades. A prática deliberada, a curiosidade constante e a busca por melhorias contínuas são seus verdadeiros aliados.
+        </div>
+
+        <div class="highlight-box">
+            <strong>Lembre-se:</strong> As melhores análises não são as mais complexas, mas aquelas que respondem perguntas de negócio de forma clara e acionável. Simplicidade com profundidade é a marca do verdadeiro especialista.
+        </div>
+
+        <div class="text" style="margin-top: 40px; text-align: center; font-size: 16px; color: #ff6b00; font-weight: 600;">
+            Boa caçada de insights! ⚔️
+        </div>
+
+        <div class="page-number">17</div>
+    </div>
+
+</body>
+</html>
