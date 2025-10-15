@@ -8,7 +8,7 @@
 
 ## 📖 Sobre
 
-Guia profissional que une a estética de The Witcher com conceitos práticos de análise de dados no Power BI. **17 páginas** de conteúdo técnico acessível com exemplos reais.
+Guia profissional que une a estética de The Witcher com conceitos práticos de análise de dados no Power BI. Conteúdo técnico acessível com exemplos reais.
 
 ---
 
